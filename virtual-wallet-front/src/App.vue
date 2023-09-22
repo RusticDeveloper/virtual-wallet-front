@@ -1,14 +1,13 @@
 <!-- todo: completar la interfaz de registro, aumentar el so de what api,estilizar la interfaz usando tailwindd psdt:aun no esta implementado del todo tailwind tailwind.config.js, darle la funcionalidad a las interfaces -->
 <script setup>
-  
+  // import "./assets/tailwind.css";
 </script>
 
 <template>
-  <div >
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-    
+  
+  <div class="container items-center">
+    <router-view></router-view>
   </div>
-  <router-view></router-view>
 </template>
 
 <style scoped>

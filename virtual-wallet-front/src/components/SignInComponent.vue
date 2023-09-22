@@ -19,43 +19,49 @@ export default {
 </script>
 
 <template>
-  <form @submit.prevent="login">
-    <Fieldset class="formContainer">
+  <form @submit.prevent="login" class="container mx-auto px-4">
+    <Fieldset class="flex-1 items-center justify-around">
       <template #legend>
-        <div class="flex align-items-center text-primary">
+        <div class="flex items-center">
           <span class="pi pi-sign-in mr-2"></span>
-          <span class="font-bold text-lg margin-3">Ingreso al sistema</span>
+          <span class="font-bold text-lg m-0 text-cyan-900">Ingreso al sistema</span>
         </div>
       </template>
-      <Dropdown
-        v-model="codigoPais"
-        editable
-        :options="paises"
-        optionLabel="name"
-        placeholder="Selecciona tu país"
-        class="w-full md:w-14rem"
-      />
+      
+        <Dropdown
+          v-model="codigoPais"
+          editable
+          :options="paises"
+          optionLabel="name"
+          placeholder="Selecciona tu país"
+          class="w-full md:w-1/4 xl:1/3"
+        />
 
-      <InputMask id="basic" v-model="phone" mask="99-999-9999" placeholder="99-999-999" />
-      <br><br>
-      <span class="p-float-label">
-        <Password v-model="password" inputId="password" toggleMask :feedback="false" />
-        <label for="password">Password</label>
-      </span>
+        <InputMask
+          id="basic"
+          v-model="phone"
+          mask="99-999-9999"
+          placeholder="99-999-999"
+          class="w-full md:w-3/4 lg:w-2/3"
+        />
 
-      <divider />
-      <span class="grid gap-4 grid-cols-2">
-      <Button label="Ingresar" text raised rounded />
-      <Button label="registrarse" severity="secondary" rounded />
-    </span>
+        <br /><br />
+        
+        <span class="p-float-label w-full">
+          <Password v-model="password" inputId="password" toggleMask :feedback="false" />
+          <label for="password">Password</label>
+        </span>
+
+        <divider />
+        <span class="grid gap-4 grid-cols-2">
+          <Button label="Ingresar" text raised rounded />
+          <Button label="registrarse" severity="secondary" rounded />
+        </span>
+      
     </Fieldset>
   </form>
 </template>
 
 <style scoped>
-.formContainer {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 3;
-}
+
 </style>

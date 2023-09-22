@@ -1,6 +1,7 @@
 /* eslint-disable vue/no-reserved-component-names */
 /* eslint-disable vue/multi-word-component-names */
 import './assets/main.css'
+import './assets/tailwind.css'
 // routing components
 import {createRouter, createWebHashHistory} from 'vue-router'
 import BaseComponent from './components/BaseComponent.vue'
@@ -33,7 +34,6 @@ import Panel from 'primevue/panel'
 import { createApp } from 'vue'
 import App from './App.vue'
 import PrimeVue from 'primevue/config'
-import './assets/tailwind.css'
 const app = createApp(App)
 //configuration
 app.use(PrimeVue, {

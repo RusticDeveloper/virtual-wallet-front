@@ -1,3 +1,7 @@
+<script>
+
+
+</script>
 <template>
   <div class="flex flex-row justify-center">
     <h2 class="text-3xl font-semibold text-orange-500 underline">Define here the nav bar</h2>

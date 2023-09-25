@@ -1,6 +1,15 @@
 <script setup></script>
 <script>
 export default {
+  methods:{
+    async submit(){
+      await this.$recaptcha()
+      
+      // Execute reCAPTCHA with action "login".
+      const checkTokern = await this.$recaptcha('login')
+      console.log(checkTokern)
+    }
+  },
   data: function () {
     return {
       phone: null,

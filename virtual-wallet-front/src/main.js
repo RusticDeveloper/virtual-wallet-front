@@ -9,6 +9,10 @@ import MainPage from './components/MainPage.vue'
 import SignInComponent from './components/SignInComponent.vue'
 import SignUpComponent from './components/SignUpComponent.vue'
 
+// captcha
+import VueClientRecaptcha from 'vue-client-recaptcha'
+import { VueReCaptcha } from 'vue-recaptcha-v3'
+
 // primevue imports
 // styles
 import 'primeicons/primeicons.css';
@@ -62,10 +66,10 @@ app.component('Fieldset',Fieldset);
 app.component('Panel',Panel);
 app.directive('tooltip', Tooltip)
 
+// local catcha
+app.component("VueClientRecaptcha", VueClientRecaptcha); 
 
 //configuracion de rutas
-
-
 const routes = [
   {
     path: '/',
@@ -95,6 +99,10 @@ const router = createRouter({
   routes, // short for `routes: routes`
 })
 
+
+// recaptca from google
+app.use(VueReCaptcha, { siteKey: '6LeBG08oAAAAAHa5mL0lDywAVSiwjV5Vv5MfysgS' })
 //routing usage
 app.use(router)
+
 app.mount('#app')

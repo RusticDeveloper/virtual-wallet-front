@@ -33,6 +33,13 @@ import Toolbar from 'primevue/toolbar';
 import Dialog from 'primevue/dialog'
 import Fieldset from 'primevue/fieldset'
 import Panel from 'primevue/panel'
+import Sidebar from 'primevue/sidebar';
+
+
+
+
+// axios importion for back-front comunication
+// import { axios } from "axios";
 
 
 import { createApp } from 'vue'
@@ -64,6 +71,7 @@ app.component('Toolbar',Toolbar)
 app.component('Dialog',Dialog)
 app.component('Fieldset',Fieldset);
 app.component('Panel',Panel);
+app.component('Sidebar',Sidebar);
 app.directive('tooltip', Tooltip)
 
 // local catcha
@@ -104,5 +112,7 @@ const router = createRouter({
 app.use(VueReCaptcha, { siteKey: '6LeBG08oAAAAAHa5mL0lDywAVSiwjV5Vv5MfysgS' })
 //routing usage
 app.use(router)
+// axios
+
 
 app.mount('#app')

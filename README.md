@@ -39,11 +39,11 @@ these are some captures of the project till now
 
 ## pages
 
-![paginas](https://i.imgur.com/IRSOR0d.gifv)
+[paginas](https://i.imgur.com/IRSOR0d.gifv)
 
 ## api recognition to autenticate
 
-![codigo de verificacion](https://i.imgur.com/Bz9lfzI.gifv)
+[codigo de verificacion](https://i.imgur.com/Bz9lfzI.gifv)
 
 Also ill be working on the functionality of this project and the backend as well
 

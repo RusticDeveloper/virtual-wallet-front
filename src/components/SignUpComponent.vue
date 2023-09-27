@@ -1,38 +1,53 @@
 <script setup>
 import { ref } from 'vue'
+import axios from 'axios'
 
-const phone = ref(null);
-const phoneCode = ref(null);
-const captcha = ref(null);
-const password = ref(null);
-const passwordCheck = ref(null);
-const invitationCode = "kd5df5gf3";
-const codigoPais = ref(null);
-const captchaCode = ref(null);
-const isValid = ref(false);
+const phone = ref(null)
+const phoneCode = ref(null)
+const captcha = ref(null)
+const password = ref(null)
+const passwordCheck = ref(null)
+const invitationCode = 'kd5df5gf3'
+const codigoPais = ref(null)
+const captchaCode = ref(null)
+const isValid = ref(false)
+const acuerdo = ref(false)
 
 const paises = ref([
-  { name: "Ecuador", code: "+593" },
-  { name: "Brazil", code: "+55" },
-  { name: "Colombia", code: "+57" },
-  { name: "Venezuela", code: "+58" },
-  { name: "El Salvador", code: "+503" },
-]);
+  { name: 'Ecuador', code: '+593' },
+  { name: 'Brazil', code: '+55' },
+  { name: 'Colombia', code: '+57' },
+  { name: 'Venezuela', code: '+58' },
+  { name: 'El Salvador', code: '+503' }
+])
 
 const getCaptchaCode = (value) => {
-  captchaCode.value = value;
-};
+  captchaCode.value = value
+}
 
 const checkValidCaptcha = (value) => {
-  isValid.value = value;
+  isValid.value = value
   if (value) {
-    alert("Your Captcha is valid now you can submit");
+    alert('Your Captcha is valid now you can submit')
   }
-};
+}
+
+// get vvalidation code
+// const getValidationCode = await fetch()=>{
+//   const url =''
+//   const data ={}
+//   const config ={}
+//   axios.post()
+// }
 </script>
 
-
 <template>
+  <!-- return buttonn -->
+  <span >
+    <router-link to="/">
+      <Button icon="pi pi-arrow-left" severity="secondary" text />
+    </router-link>
+  </span>
   <form @submit.prevent="login" class="container mx-auto px-4 md:px-20">
     <Fieldset>
       <template #legend>
@@ -42,6 +57,7 @@ const checkValidCaptcha = (value) => {
         </div>
       </template>
 
+      
       <div class="flex items-center justify-between flex-col sm:flex-row">
         <div class="w-full sm:w-3/6">
           <span class="text-stone-600 font-bold italic text-xs">
@@ -66,7 +82,7 @@ const checkValidCaptcha = (value) => {
               placeholder="Codigo enviado al telefono"
               class="text-stone-600 font-bold italic text-xs"
             />
-            <Button label="Obtener codigo" severity="info" outlined />
+            <Button label="Obtener codigo" severity="info" outlined  />
             <br />
             <small>verifique el codigo</small>
           </span>
@@ -118,6 +134,13 @@ const checkValidCaptcha = (value) => {
             <small>Ingrese el codigo de invitacion.</small>
           </span>
         </div>
+      </div>
+      <br>
+      <div>
+        <Checkbox v-model="acuerdo" :binary="true" /> 
+        <span class="ml-3">He leido y estoy de acuerdo con los </span>
+        <router-link to="TermsPolicy" ><span class="text-blue-600 italic">terminos & condiciones</span></router-link>
+        <!-- <Button label="terminos & condiciones"  link rounded class="text-sm"/> -->
       </div>
       <divider />
       <span class="grid gap-4 grid-cols-2">

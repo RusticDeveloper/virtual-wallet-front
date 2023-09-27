@@ -4,7 +4,7 @@
     <template #start>
         <Button icon="pi pi-bars" severity="secondary" text  @click="visible=true"/>
     </template>
-    
+    template
     <template #end>
         <Button icon="pi pi-user" severity="secondary" text  />
     </template>
@@ -12,8 +12,9 @@
 
   <div class="flex card justify-center">
     <Sidebar v-model:visible="visible" position="left">
+      <Button label="Ingresar" link  class="text-sm" />
+        <Button label="registrarse"  link  class="text-sm"/>
     
-    <h2>configurar la barra lateral</h2>
   </Sidebar>
 </div>
 </template>

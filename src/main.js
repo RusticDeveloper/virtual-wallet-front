@@ -8,6 +8,7 @@ import BaseComponent from './components/BaseComponent.vue'
 import MainPage from './components/MainPage.vue'
 import SignInComponent from './components/SignInComponent.vue'
 import SignUpComponent from './components/SignUpComponent.vue'
+import TermsPolicy from './components/common/TermsPolicy.vue'
 
 // captcha
 import VueClientRecaptcha from 'vue-client-recaptcha'
@@ -34,8 +35,7 @@ import Dialog from 'primevue/dialog'
 import Fieldset from 'primevue/fieldset'
 import Panel from 'primevue/panel'
 import Sidebar from 'primevue/sidebar';
-
-
+import Checkbox from 'primevue/checkbox';
 
 
 // axios importion for back-front comunication
@@ -72,6 +72,7 @@ app.component('Dialog',Dialog)
 app.component('Fieldset',Fieldset);
 app.component('Panel',Panel);
 app.component('Sidebar',Sidebar);
+app.component('Checkbox',Checkbox);
 app.directive('tooltip', Tooltip)
 
 // local catcha
@@ -96,6 +97,11 @@ const routes = [
         path: 'signup',
         component: SignUpComponent,
         name: 'signup '
+      },
+      {
+        path: 'termsPolicy',
+        component: TermsPolicy,
+        name: 'terms '
       }
     ]
   }
